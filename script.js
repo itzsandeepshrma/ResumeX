@@ -1,7 +1,7 @@
 const tabContainer = document.getElementById('templateTabs');
 const resumeEl = document.getElementById('resume');
 
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 40; i++) {
   const btn = document.createElement('button');
   btn.textContent = 'Template ' + i;
   btn.onclick = () => setTemplate(i, btn);
