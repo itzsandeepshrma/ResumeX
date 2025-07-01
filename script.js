@@ -1,7 +1,7 @@
 const tabContainer = document.getElementById('templateTabs');
 const resumeEl = document.getElementById('resume');
 
-for (let i = 1; i <= 40; i++) {
+for (let i = 1; i <= 200; i++) {
   const btn = document.createElement('button');
   btn.textContent = 'Template ' + i;
   btn.onclick = () => setTemplate(i, btn);
@@ -23,10 +23,26 @@ function updateResume() {
   document.getElementById('rEducation').textContent = document.getElementById('education').value;
   document.getElementById('rExperience').textContent = document.getElementById('experience').value;
   document.getElementById('rSkills').textContent = document.getElementById('skills').value;
-  document.getElementById('rLinkedin').innerHTML = document.getElementById('linkedin').value ? `🔗 LinkedIn: <a href="${document.getElementById('linkedin').value}" target="_blank">${document.getElementById('linkedin').value}</a>` : '';
-  document.getElementById('rGithub').innerHTML = document.getElementById('github').value ? `💻 GitHub: <a href="${document.getElementById('github').value}" target="_blank">${document.getElementById('github').value}</a>` : '';
-  document.getElementById('rWebsite').innerHTML = document.getElementById('website').value ? `🌐 Website: <a href="${document.getElementById('website').value}" target="_blank">${document.getElementById('website').value}</a>` : '';
-}
+
+  const linkedin = document.getElementById('linkedin').value;
+  const github = document.getElementById('github').value;
+  const website = document.getElementById('website').value;
+
+  document.getElementById('rLinkedin').innerHTML = linkedin ? `
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" width="20" style="vertical-align: middle; margin-right: 6px;"> 
+    <a href="${linkedin}" target="_blank">${linkedin}</a>
+  ` : '';
+
+  document.getElementById('rGithub').innerHTML = github ? `
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg" width="20" style="vertical-align: middle; margin-right: 6px; filter: invert(1);"> 
+    <a href="${github}" target="_blank">${github}</a>
+  ` : '';
+
+  document.getElementById('rWebsite').innerHTML = website ? `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg" width="20" style="vertical-align: middle; margin-right: 6px;"> 
+    <a href="${website}" target="_blank">${website}</a>
+  ` : '';
+    }
 
 function previewPhoto(event) {
   const file = event.target.files[0];
