@@ -28,22 +28,24 @@ function updateResume() {
   const github = document.getElementById('github').value;
   const website = document.getElementById('website').value;
 
+  // LinkedIn
   document.getElementById('rLinkedin').innerHTML = linkedin ? `
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" width="20" style="vertical-align: middle; margin-right: 6px;"> 
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="LinkedIn Logo"> 
     <a href="${linkedin}" target="_blank">${linkedin}</a>
   ` : '';
 
+  // GitHub
   document.getElementById('rGithub').innerHTML = github ? `
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg" width="20" style="vertical-align: middle; margin-right: 6px; filter: invert(1);"> 
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="GitHub Logo"> 
     <a href="${github}" target="_blank">${github}</a>
   ` : '';
 
+  // Website
   document.getElementById('rWebsite').innerHTML = website ? `
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg" width="20" style="vertical-align: middle; margin-right: 6px;"> 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="Website Icon"> 
     <a href="${website}" target="_blank">${website}</a>
   ` : '';
-    }
-
+}
 function previewPhoto(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
