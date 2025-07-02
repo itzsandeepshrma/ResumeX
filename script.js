@@ -23,29 +23,11 @@ function updateResume() {
   document.getElementById('rEducation').textContent = document.getElementById('education').value;
   document.getElementById('rExperience').textContent = document.getElementById('experience').value;
   document.getElementById('rSkills').textContent = document.getElementById('skills').value;
-
-  const linkedin = document.getElementById('linkedin').value;
-  const github = document.getElementById('github').value;
-  const website = document.getElementById('website').value;
-
-  // LinkedIn
-  document.getElementById('rLinkedin').innerHTML = linkedin ? `
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="LinkedIn Logo"> 
-    <a href="${linkedin}" target="_blank">${linkedin}</a>
-  ` : '';
-
-  // GitHub
-  document.getElementById('rGithub').innerHTML = github ? `
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="GitHub Logo"> 
-    <a href="${github}" target="_blank">${github}</a>
-  ` : '';
-
-  // Website
-  document.getElementById('rWebsite').innerHTML = website ? `
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" alt="Website Icon"> 
-    <a href="${website}" target="_blank">${website}</a>
-  ` : '';
+  document.getElementById('rLinkedin').innerHTML = document.getElementById('linkedin').value ? `🔗 LinkedIn: <a href="${document.getElementById('linkedin').value}" target="_blank">${document.getElementById('linkedin').value}</a>` : '';
+  document.getElementById('rGithub').innerHTML = document.getElementById('github').value ? `💻 GitHub: <a href="${document.getElementById('github').value}" target="_blank">${document.getElementById('github').value}</a>` : '';
+  document.getElementById('rWebsite').innerHTML = document.getElementById('website').value ? `🌐 Website: <a href="${document.getElementById('website').value}" target="_blank">${document.getElementById('website').value}</a>` : '';
 }
+
 function previewPhoto(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
@@ -71,4 +53,4 @@ function downloadPDF() {
     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
   };
   html2pdf().from(element).set(opt).save();
-}
+    }
